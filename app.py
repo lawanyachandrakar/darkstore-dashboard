@@ -171,7 +171,7 @@ st.caption(
 k1, k2, k3, k4 = st.columns(4)
 k1.metric("Capacity (orders/min)", m["c"], help="floor(pickers × rate)")
 k2.metric("P(store overloaded)", pct(m["p_over"]), help="Poisson: P(X > capacity)")
-k3.metric("P(delivery late)", pct(m["p_late"]), delta=f"target {pct(target)}", delta_color="off")
+k3.metric("P(delivery late)", pct(m["p_late"]), help=f"Target: {pct(target)} or lower")
 k4.metric("Total cost (Rs/hr)", f"{total_cost:,.0f}")
 
 if m["p_late"] <= target:
